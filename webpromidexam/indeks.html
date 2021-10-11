@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="X-UA-Compatible" content="IE=EDGE">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Student List App</title>
+  </head>
+  <body>
+    <!--nav-bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid mb-2">
+        <a class="navbar-brand">STUDENT MANAGEMENT MINI APP</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="indeks.html">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">ABOUT</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-3">
+      <div class="frms">
+        <h1>STUDENT MANAGEMENT <br> MINIAPP</h1>
+        <hr>
+
+        <div class="container mt-4 mb-4">
+          <div class="row pt-3">
+            <div class="col-8">
+              <h4>Add Student</h4>
+        <button type="button" class="btn btn-primary" name="button-show">Show Form Add Student</button>
+        <!--form input-->
+        <form class="form was validated">
+          <div>
+            <label for="id" class="form-label"><br>STUDENT ID(NIM)</label>
+            <input type="text" class ="form-control" name="id" placeholder="s2171.." required>
+          </div>
+
+          <div>
+            <label for="fullname" class="form-label">FULLNAME</label>
+            <input type="text" class="form-control" name="fullname" placeholder="LastName FirstName" required>
+          </div>
+
+          <div class="gender">
+            <label class="form-label">GENDER</label>
+            <div>
+              <input class="male" type="radio" name="gender" value="Male">
+              <label class="form-check-label" for="gender">
+                Male
+              </label>
+              <input class="female" type="radio" name="gender" value="Female">
+              <label class="form-check-label" for="Female">
+                Female
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <label for="faculty" class="form-label"><br>FACULTY</label>
+            <select id="faculties" name="faculty" class="form-select form-select-sm" aria-label=".form-select-sm example">
+              <option value="all">--SELECT YOUR FACULTY--</option>
+              <option value="theology">Fakultas Filsafat</option>
+              <option value="nursing">Fakultas Keperawatan</option>
+              <option value="agriculture">Fakultas Pertanian</option>
+              <option value="computer_science">Fakultas Ilmu Komputer</option>
+              <option value="economic">Fakultas Ekonomi dan Bisnis</option>
+              <option value="secretary">Akademi Sekretaris Manajemen Indonesia Klabat</option>
+              <option value="education">fakultas Pendidikan</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="programs" class="form-label"><br>Program Of Study</label>
+            <select id="programs" name="programs" class="form-select form-select-sm" aria-label=".form-select-sm example">
+              <option class="all" value="all" id="options">--SELECT YOUR FACULTY--</option>
+            </select>
+          </div>
+          <br>
+          <button class="btn btn-primary" type="submit">Add Student</button>
+        </form>
+      </div>
+
+      <!--filters-->
+      <div class="filters col-4 pt-3">
+        <h4>FILTER STUDENT BY</h4>
+        <form id="form2">
+          <label for="FilterFaculty" class="form-label"><br>FACULTY</label>
+          <select class="fil-faculty form-select form-select-sm" name="fil-faculty">
+            <option value="all">--SELECT YOUR FACULTY--</option>
+            <option value="theology">Fakultas Filsafat</option>
+            <option value="nursing">Fakultas Keperawatan</option>
+            <option value="agriculture">Fakultas Pertanian</option>
+            <option value="comp">Fakultas Ilmu Komputer</option>
+            <option value="economic">Fakultas Ekonomi</option>
+            <option value="sec">Akademi Sekretaris Manajemen Indonesia</option>
+            <option value="edu">Fakultas Keguruan dan Ilmu Pendidikan</option>
+          </select>
+          <label for="FilterFaculty" class="form-label"><br>PROGRAM OF STUDY</label>
+          <select class="fil-programs form-select form-select-sm" name="fil-programs">
+            <option value="all">--SELECT YOUR PROGRAM OF STUDY--</option>
+            <option value="bachelors">Ilmu Filsafat</option>
+            <option value="accounting">Akuntasi</option>
+            <option value="management">Management</option>
+            <option value="international">Program Internasional</option>
+            <option value="nursing">Keperawatan</option>
+            <option value="proffession">Profesi</option>
+            <option value="secretary">Sekretaris</option>
+            <option value="agriculture">Pertanian</option>
+            <option value="system">Sistem Informasi</option>
+            <option value="technology">Teknik Informatika</option>
+            <option value="religious">Ilmu Filsafat</option>
+            <option value="english">Pendidikan Bahasa Inggris</option>
+            <option value="economic">Pendidikan Ekonomi</option>
+            <option value="formal">Pendidikan Luar Sekolah</option>
+          </select>
+        </form>
+      </div>
+    </div>
+    </div>
+    </div>
+    <hr>
+    </div>
+      
+    <!--table output student-->
+      <div id="example-div" class="d-flex aligns-items-center justify-content-center">
+      <h1>OUR STUDENT</h1>
+      </div>
+
+      <form class="d-flex aligns-items-center justify-content-center">
+      <input class="searchbar form-control me-2" type="text" name="searchbar"  value="" placeholder="search student by name....">
+      </form>
+
+      <div class="container col-lg">
+      <table class="table table-hover">
+        <tbody>
+          <th>STUDENT ID</th>
+          <th>FULLNAME</th>
+          <th>GENDER</th>
+          <th>FACULTY</th>
+          <th>PROGRAM OF STUDY</th>
+          <th>ACTION</th>
+        </tbody>
+      </table>
+
+    <footer class="py-4">
+      <hr>
+    <p class="text-center text-uppercase">&copy; 2021 Project mid semester web programing</p>
+    </footer>
+  <script src="indeks.js" charset="utf-8"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+  </body>
+</html>
